@@ -16,9 +16,9 @@ class ArticlesSeeder extends Seeder
     {
         for ($i = 0; $i < 10; $i++){
         $newArticle = new Article();
-        $newArticle->author = $faker->lastname();
-        $newArticle->title = $faker->sentence();
-        $newArticle->body = $faker->paragraphs();
+        $newArticle->author = $faker->name();
+        $newArticle->title = $faker->sentence(3);
+        $newArticle->body = $faker->text();
         $newArticle->save();
         }
     }
