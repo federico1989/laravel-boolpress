@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Article;
+use App\Category;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +16,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+    Route::get('articles', function () {
+        return response()->json([
+            'data' => Article::all()
+        ],200);
+    });
+
+    Route::get('categories', function () {
+        return response()->json([
+            'data' => Category::all()
+        ],200);
+    });
+

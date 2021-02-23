@@ -17,11 +17,15 @@
         <form action="{{ route('articles.store') }}" method="article">
             @csrf
             <div class="form-group">
-              <label for="title"></label>
+              <label for="author">Author</label>
+              <input type="text" name="author" id="author" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="title">Title</label>
               <input type="text" name="title" id="title" class="form-control">
             </div>
             <div class="form-group">
-              <label for="body"></label>
+              <label for="body">Body</label>
               <input type="text" name="body" id="body" class="form-control" rows="3">
               <button type="submit" class="btn btn-primary">Submit</button>
             </div>

@@ -13,8 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PageController@home')->name('home');
+
+Route::get('articles_api','ArticleController@articles_api')->name('articles_api');
+
+Route::get('categories_api','CategoryController@categories_api')->name('categories_api');
 
 Route::resource('articles','ArticleController');

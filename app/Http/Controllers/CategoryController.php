@@ -4,21 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Article;
+use App\Category;
 
-class ArticleController extends Controller
-
+class CategoryController extends Controller
 {
-     /**
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $articles = Article::latest()->get();
+        $categories = Category::all();
 
-        return view('articles.index', compact('articles'));
+        return view('category.index', compact('categories'));
     }
 
     /**
@@ -28,7 +27,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        return view('articles.create');
+        //
     }
 
     /**
@@ -39,60 +38,51 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        $article= new Article;
-        $article->title= request('title');
-        $article->body= request('body');
-
-        $article->save();
-
-        return redirect()->route('articles.index');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Article  $article
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Article $article)
+    public function show($id)
     {
-        return view('articles.show', compact('article'));
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Article  $article
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Article $article)
+    public function edit($id)
     {
-        return view('articles.edit', compact('article'));
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Article  $article
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Article $article)
+    public function update(Request $request, $id)
     {
-        $article->update($request->all());
-
-        return redirect()->route('articles.index');
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Article  $article
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Article $article)
+    public function destroy($id)
     {
-        $article->delete();
-        return redirect()->route('articles.index');
+        //
     }
 }

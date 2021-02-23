@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel struttura</title>
+        <title>Laravel</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -14,8 +14,16 @@
 
     </head>
     <body>
-        <h1>{{$article->title}}</h1>
-        <p>{{$article->author}}</p>
-        <p>{{$article->body}}</p>
+        <nav class="navbar">
+            <a href="{{ route('home')}}">Home</a>
+            <a href="{{ route('articles.index')}}">Article</a>
+            <a href="">Contact</a>
+            <a href="">Contact</a>
+        </nav>
+        <main>
+            @yield('main')
+        </main>
+
+        <script src="{{ asset('js/app.js') }}"></script>
     </body>
 </html>
