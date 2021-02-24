@@ -20,15 +20,9 @@ use App\Category;
 //     return $request->user();
 // });
 
-    Route::get('articles', function () {
-        return response()->json([
-            'data' => Article::all()
-        ],200);
-    });
+    Route::get('articles', 'API\BlogController@articles');
 
-    Route::get('categories', function () {
-        return response()->json([
-            'data' => Category::all()
-        ],200);
-    });
+    Route::get('categories', 'API\BlogController@categories');
+
+    Route::get('tags', 'API\BlogController@tags');
 
