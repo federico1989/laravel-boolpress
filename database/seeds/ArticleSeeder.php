@@ -20,8 +20,10 @@ class ArticleSeeder extends Seeder
         $newArticle->author = $faker->name();
         $newArticle->title = $faker->sentence(3);
         $newArticle->body = $faker->text();
-        $newArticle->category = $faker->word();
-        $newArticle->tags = $faker->words(5,true);
+        // $newArticle->category_id = $faker->numberBetween($min = 1, $max = 30);
+        // $newArticle->tags_id = $faker->numberBetween($min = 1, $max = 30);
+        // $newArticle->category = $faker->word();
+        // $newArticle->tags = $faker->words(5,true);
         $newArticle->save();
         }
     }
