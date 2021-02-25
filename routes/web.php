@@ -15,9 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'PageController@home')->name('home');
 
-Route::get('articles_api','ArticleController@articles_api')->name('articles_api');
 
-Route::get('categories_api','CategoryController@categories_api')->name('categories_api');
 
 //Resource route
 
