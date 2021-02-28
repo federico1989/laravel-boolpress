@@ -14,8 +14,8 @@
 
     </head>
     <body>
-        <h1>{{$article->title}}</h1>
-        <p>{{$article->author}}</p>
-        <p>{{$article->body}}</p>
+        <h1>Title: {{$article->title}}</h1>
+        <p>Author: {{$article->author}}</p>
+        <p>Description: {{$article->body}}</p>
     </body>
 </html>
