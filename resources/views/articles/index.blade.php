@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('main')
-    <a href="{{ route('articles.create') }}">Create new article</a>
+    <a class="btn btn-primary" href="{{ route('articles.create') }}">Create new article</a>
     <table class="table">
         <thead>
             <tr>
@@ -8,6 +8,8 @@
                 <th>AUTHOR</th>
                 <th>TITLE</th>
                 <th>BODY</th>
+                <th>TAG</th>
+                <th>CATEGORY</th>
                 <th>ACTION</th>
             </tr>
         </thead>
@@ -18,10 +20,12 @@
             <td>{{$value->author}}</td>
             <td>{{$value->title}}</td>
             <td>{{$value->body}}</td>
+            <td>{{$value->tag_id}}</td>
+            <td>{{$value->category_id}}</td>
             <td>
-                <a href="{{ route('articles.show', ['article' => $value->id]) }}">View</a>
-                <a href="{{ route('articles.edit', ['article' => $value->id]) }}">Edit</a>
-                <form action="{{ route('articles.destroy', ['article' => $value->id]) }}" method="article">
+                <a class="btn btn-info" href="{{ route('articles.show', ['article' => $value->id]) }}">View</a>
+                <a class="btn btn-secondary" href="{{ route('articles.edit', ['article' => $value->id]) }}">Edit</a>
+                <form action="{{ route('articles.destroy', ['article' => $value->id]) }}" method="post">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger">Delete</button>

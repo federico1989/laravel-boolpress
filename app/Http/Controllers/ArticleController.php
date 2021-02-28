@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Article;
+use App\Tag;
+use App\Category;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
@@ -26,7 +28,9 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        return view('articles.create');
+        $tags=Tag::all();
+        $categories=Category::all();
+        return view('articles.create', compact('tags','categories'));
     }
 
     /**
@@ -40,6 +44,7 @@ class ArticleController extends Controller
         $article= new Article;
         $article->title= request('title');
         $article->body= request('body');
+        $article->author= request('author');
 
         $article->save();
 
@@ -64,8 +69,10 @@ class ArticleController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Article $article)
-    {
-        return view('articles.edit', compact('article'));
+    {   
+        $tags=Tag::all();
+        $categories=Category::all();
+        return view('articles.edit', compact('article','tags','categories'));
     }
 
     /**
